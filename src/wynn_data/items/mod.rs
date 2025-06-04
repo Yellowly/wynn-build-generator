@@ -71,6 +71,12 @@ impl WynnItem {
         })
         .unwrap_or(Type::Helmet)
     }
+
+    pub fn get_lvl(&self) -> u32 {
+        if self.is_null(){0}
+        else{self.item.data_uval(Atrs::Lvl as usize)}
+    }
+
     /// Gets the numeric identifier of this item
     /// 
     /// Useful to check if two items are the same (ignorning identification quality and powders)
